@@ -48,3 +48,23 @@ xlabel('Outcome');
 ylabel('Probability');
 title('Estimated Probabilities using EstimateProb Function');
 
+% Hasil
+
+% Estimated probability P[outcome=3]: 0.283
+% Estimated probabilities for all outcomes:
+% P[outcome=0]: 0.047
+% P[outcome=1]: 0.185
+% P[outcome=2]: 0.305
+% P[outcome=3]: 0.283
+% P[outcome=4]: 0.139
+% P[outcome=5]: 0.034
+% P[outcome=6]: 0.007
+% Estimated probabilities using EstimateProb function:
+% P[outcome=0.5]: 0.047
+% P[outcome=1.5]: 0.185
+% P[outcome=2.5]: 0.305
+% P[outcome=3.5]: 0.283
+% P[outcome=4.5]: 0.139
+% P[outcome=5.5]: 0.034
+% P[outcome=6.5]: 0.007
+
