@@ -28,6 +28,8 @@ xlabel('Outcome');
 ylabel('Probability');
 title('Estimated Probabilities of Binomial Outcomes');
 
+
+% 6.4
 % Use the EstimateProb function to estimate probabilities
 first_bin_center = 0;
 binsize = 1;
@@ -68,3 +70,31 @@ title('Estimated Probabilities using EstimateProb Function');
 % P[outcome=5.5]: 0.034
 % P[outcome=6.5]: 0.007
 
+% 6.5
+
+% Use the EstimateProb function to estimate probabilities with bin size 1
+[PX1, X1] = EstimateProb(xbinomial, 0, 1, 6);
+figure;
+bar(X1, PX1);
+xlabel('Outcome');
+ylabel('Probability');
+title('Estimated Probabilities using EstimateProb Function (Bin Size 1)');
+
+% Use the EstimateProb function to estimate probabilities with bin size 0.5
+[PX2, X2] = EstimateProb(xbinomial, -5, 0.5, 12);
+figure;
+bar(X2, PX2);
+xlabel('Outcome');
+ylabel('Probability');
+title('Estimated Probabilities using EstimateProb Function (Bin Size 0.5)');
+
+% Hasil
+% Estimated probability P[outcome=3]: 0.285
+% Estimated probabilities for all outcomes:
+% P[outcome=0]: 0.044
+% P[outcome=1]: 0.159
+% P[outcome=2]: 0.327
+% P[outcome=3]: 0.285
+% P[outcome=4]: 0.135
+% P[outcome=5]: 0.041
+% P[outcome=6]: 0.009
