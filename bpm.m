@@ -1,12 +1,14 @@
-% bpm.m
+% 6.1
 n = 6;
 p = 0.4;
 xbinomial = binornd(n, p, [1, 1000]);
 
-% Estimate P[outcome=3]
+% 6.2 
+% Estimate P[outcome=3] 
 P_outcome_3 = sum(xbinomial == 3) / length(xbinomial);
 disp(['Estimated probability P[outcome=3]: ', num2str(P_outcome_3)]);
 
+% 6.3
 % Calculate histogram
 [bin_counts, bin_centers] = hist(xbinomial, 0:n);
 
@@ -26,13 +28,23 @@ xlabel('Outcome');
 ylabel('Probability');
 title('Estimated Probabilities of Binomial Outcomes');
 
-% Hasil: 
-% Estimated probability P[outcome=3]: 0.3
-% Estimated probabilities for all outcomes:
-% P[outcome=0]: 0.046
-% P[outcome=1]: 0.174
-% P[outcome=2]: 0.304
-% P[outcome=3]: 0.3
-% P[outcome=4]: 0.141
-% P[outcome=5]: 0.03
-% P[outcome=6]: 0.005
+% Use the EstimateProb function to estimate probabilities
+first_bin_center = 0;
+binsize = 1;
+last_bin_center = n;
+
+[PX, X] = EstimateProb(xbinomial, first_bin_center, binsize, last_bin_center);
+
+% Display the estimated probabilities
+disp('Estimated probabilities using EstimateProb function:');
+for i = 1:length(X)
+    disp(['P[outcome=', num2str(X(i)), ']: ', num2str(PX(i))]);
+end
+
+% Plot the estimated probabilities
+figure;
+bar(X, PX);
+xlabel('Outcome');
+ylabel('Probability');
+title('Estimated Probabilities using EstimateProb Function');
+
